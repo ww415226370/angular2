@@ -1,0 +1,41 @@
+<div>
+	<h4>生命周期钩子</h4>
+	<div class="article">
+		<p class="title">生命周期-------------------------------------</p>
+
+		<span>父组件:</span>
+		<span>{{outIndex}}</span><button on-click="addIndex()">outIndex add</button><button (click)="show = !show">toggle</button>
+		<div style="color: red;">{{messages}}</div>
+		<div style="color: red;">通过变量交互</div>
+		<span></span>
+		<div style="border: 1px solid black;">
+			<span>子组件:</span>
+			<lifecycle-hooks-test *ngIf="show" (onMessage)="message($event)" bind-index="outIndex"></lifecycle-hooks-test>
+		</div>
+
+		<p class="title">组件交互-------------------------------------</p>
+
+		<h2>Should mankind colonize the Universe?</h2>
+	    <h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+	    <app-voter *ngFor="let voter of voters"
+		      [name]="voter"
+		      (onVoted)="onVoted($event)">
+	    </app-voter>
+
+	    <p class="title">通过#变量交互-------------------------------------</p>
+
+	   <!--  <h3>Countdown to Liftoff (via local variable)</h3>
+	  	<button (click)="timer.start()">Start</button>
+	  	<button (click)="timer.stop()">Stop</button>
+	  	<div class="seconds">{{timer.seconds}}</div>
+		<app-countdown-timer #timer></app-countdown-timer> -->
+
+		<p class="title">通过ViewChild交互-------------------------------------</p>
+
+		<h3>Countdown to Liftoff (via ViewChild)</h3>
+	  	<button (click)="start()">Start</button>
+ 	 	<button (click)="stop()">Stop</button>
+	  	<div class="seconds">{{ seconds() }}</div>
+	  	<app-countdown-timer></app-countdown-timer>
+	</div>
+</div>

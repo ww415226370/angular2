@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+body,html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contents {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.leftMenu {
+    height: 100%;
+    width: 220px;
+    border-right: 1px solid black;
+    display: inline-block;
+    position: fixed;
+}
+
+.content {
+    padding: 20px;
+    float: right;
+    width: calc(100% - 262px);
+}
+
+.active {
+    color: red;
+}
+
+.article {
+    margin-left: 20px;
+}
+
+.title {
+    color: red;
+}

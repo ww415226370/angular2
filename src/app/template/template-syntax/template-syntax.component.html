@@ -1,0 +1,44 @@
+<div>
+	<h4>显示数据</h4>
+	<div class="article">
+		<p class="title">插值-------------------------------------</p>
+
+		<p>{{title}}</p>
+
+		<p class="title">ngFor-------------------------------------</p>
+
+		<input type="text" name=""  [(ngModel)]="newItem" /><button on-click="saveItem()">add</button>
+		<ul>
+			<li *ngFor="let item of list; let i = index; trackBy: trackByList">
+				{{item.id}}-{{item!.name}}
+				<button (click)="removeItem(i)">remove</button>
+			</li>
+		</ul>
+
+		<p class="title">ngIf-------------------------------------</p>
+
+		<span *ngIf="show">show</span><button (click)="show = !show">Toggle show</button>
+
+		<p class="title">ngSwitch-------------------------------------</p>
+
+		<div>
+			<label *ngFor="let item of list">
+				<input type="radio" name="item" (change)="chooseItem(item)" />{{item.name}}
+			</label>
+			<div [ngSwitch]="currentItem?.name">
+			  <div *ngSwitchCase="'Zero'"   >Hello Zero</div>
+			  <div *ngSwitchCase="'MrNice'" >Hello MrNice</div>
+			  <div *ngSwitchCase="'Narco'"  >Hello Narco</div>
+			  <div *ngSwitchDefault         >Hello New</div>
+			</div>
+		</div>
+
+		<p class="title">#var变量-------------------------------------</p>
+
+		<input type="text" placeholder="phone number" #phone />
+		<!-- <input type="text" placeholder="phone number" ref-phone /> -->
+		<button (click)="callPhone(phone.value)">Call</button>
+
+	</div>
+		
+</div>

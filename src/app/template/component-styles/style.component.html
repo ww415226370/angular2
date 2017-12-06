@@ -1,0 +1,27 @@
+<div>
+	<h4>生命周期钩子</h4>
+	<div class="article">
+		<p class="title">组件样式-------------------------------------</p>
+		<h1>颜色</h1>
+
+		<p class="title">属性指令-------------------------------------</p>
+
+		<h1>My First Attribute Directive</h1>
+ 
+		<h4>Pick a highlight color</h4>
+		<div>
+	  		<input type="radio" name="colors" (click)="color='lightgreen'">Green
+	  		<input type="radio" name="colors" (click)="color='yellow'">Yellow
+	  		<input type="radio" name="colors" (click)="color='cyan'">Cyan
+		</div>
+		<p [appHighlight]="color">Highlight me!</p>
+		 
+		<p [appHighlight]="color" defaultColor="violet">
+	  		Highlight me too!
+		</p>
+
+		<p class="title">结构指令-------------------------------------</p>
+
+		<p *appUnless="display">Show this sentence unless the condition is true.</p><button (click)="display = !display">Toggle</button>
+	</div>
+</div>
